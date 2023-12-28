@@ -3,11 +3,11 @@ var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for (var i = 0; i < numberOfDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
     var buttonInnerHTML = this.innerHTML;
-    sound(buttonInnerHTML);
+    makeSound(buttonInnerHTML);
   });
 }
 
-function sound(key) {
+function makeSound(key) {
   switch (key) {
     case "w":
       var tom1 = new Audio("sounds/tom-1.mp3");
