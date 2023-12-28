@@ -1,17 +1,29 @@
+// Get the number of drum buttons
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
+// Add click event listeners to all drum buttons
 for (var i = 0; i < numberOfDrumButtons; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    // Get the inner HTML of the clicked button
     var buttonInnerHTML = this.innerHTML;
+    // Call the makeSound function with the button's inner HTML
     makeSound(buttonInnerHTML);
+    // Call the buttonAnimation function with the button's inner HTML
+    buttonAnimation(buttonInnerHTML);
   });
 }
 
+// Add keypress event listener to the document
 document.addEventListener("keypress", function (event) {
+  // Call the makeSound function with the pressed key
   makeSound(event.key);
+  // Call the buttonAnimation function with the pressed key
+  buttonAnimation(event.key);
 });
 
+// Function to make sound based on key/button
 function makeSound(key) {
+  // Use switch-case to assign sounds to different keys
   switch (key) {
     case "w":
       var tom1 = new Audio("sounds/tom-1.mp3");
@@ -51,4 +63,18 @@ function makeSound(key) {
     default:
       console.log(key);
   }
+}
+
+// Function to animate button when pressed
+function buttonAnimation(currentKey) {
+  // Get the active button using the current key
+  var activeButton = document.querySelector("." + currentKey);
+
+  // Add the "pressed" class to the active button
+  activeButton.classList.add("pressed");
+
+  // Remove the "pressed" class after a delay
+  setTimeout(function () {
+    activeButton.classList.remove("pressed");
+  }, 100);
 }
