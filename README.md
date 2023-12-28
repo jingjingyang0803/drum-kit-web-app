@@ -28,4 +28,6 @@ The JavaScript code for this application includes:
 - "k": Crash
 - "l": Kick-bass
 
+Check out the webpage in action in this [YouTube video](https://youtu.be/aYAbjUOV6qY).
+
 Enjoy making beats!
