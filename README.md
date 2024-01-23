@@ -1,6 +1,6 @@
 # Drum Kit Web App
 
-This is a simple web application that simulates a drum kit.
+This is a simple web application that simulates a drum kit. This is a course project for course The Complete 2023 Web Development Bootcamp (AppBrewery).
 
 ## How to Use
 
